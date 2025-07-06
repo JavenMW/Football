@@ -1,0 +1,4 @@
+h/ate1 = 'No_Tight_End' stats = 0
+h/arb1_receiving_epa = stats = 0 observed running backs had no receiving stats recorded on 'https://www.pro-football-reference.com/'
+h/adl4 = stats = 0 'No 4th lineman data' observed teams did not have a fourth defensive lineman for that game or no stats were recorded. this was confirmed on 'https://www.pro-football-reference.com/' 
+h/alb3 = 'No_Data_Found' stats as 'average for lb3', some linebackers have data but for some reason it is not populating in the raw dataset from our source.
