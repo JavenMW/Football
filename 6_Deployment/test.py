@@ -9,12 +9,12 @@ def test_prediction(home_team, away_team):
 
     try:
         response = requests.post(url, json=payload)
-        print(f"\nRequesting prediction for {home_team} vs {away_team}...")
+        print(f"\nRequesting prediction for {away_team} @ {home_team} ...")
         print("Status Code:", response.status_code)
         print("Response:", response.text)
 
         if response.status_code == 200:
-            print("Parsed JSON:", response.json())
+            print("Good Response")
         else:
             print("Non-200 response, check server logs for details.")
     except Exception as e:
