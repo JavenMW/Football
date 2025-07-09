@@ -59,11 +59,11 @@ class Teams(BaseModel):
     home_team: str
     away_team: str
 
-model_handler = ModelHandler()
+model = ModelHandler()
 
 @app.post("/predict")
 def predict_margin(teams: Teams):
-    pred = model_handler.make_prediction(teams.home_team, teams.away_team)
+    pred = model.make_prediction(teams.home_team, teams.away_team)
 
     if pred > 0:
         winner = teams.home_team
@@ -71,6 +71,3 @@ def predict_margin(teams: Teams):
         winner = teams.away_team
 
     return {"predicted_margin": pred, "predicted_winner ": winner}
-
-
-
