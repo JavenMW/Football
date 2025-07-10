@@ -2,13 +2,12 @@ import joblib
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel
-import requests
 
 app = FastAPI()
 
 class DataHandler:
     def __init__(self):
-        self.data = joblib.load("C:/Code/Git Repositories/Football/Football/3_Data_Preparation/rawdata_clean.pkl")
+        self.data: pd.DataFrame = joblib.load("C:/Code/Git Repositories/Football/Football/3_Data_Preparation/rawdata_clean.pkl")
 
     def team_query(self, home_team: str, away_team: str) -> pd.DataFrame:
 
@@ -45,7 +44,7 @@ class ModelHandler:
     def __init__(self):
         self.lasso_pipe = joblib.load("C:/Code/Git Repositories/Football/Football/4_5_Modeling_and_Evaluation/lasso_pipeline.pkl")
 
-    def make_prediction(self, home_team, away_team):
+    def make_prediction(self, home_team: str, away_team: str):
         query = DataHandler()
 
         game_stats = query.team_query(home_team=home_team, away_team=away_team)

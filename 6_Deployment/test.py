@@ -1,6 +1,6 @@
 import requests
 
-def test_prediction(home_team, away_team):
+def test_prediction(home_team: str, away_team: str):
     url = "http://127.0.0.1:8000/predict"
     payload = {
         "home_team": home_team,
