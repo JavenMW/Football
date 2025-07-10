@@ -62,11 +62,12 @@ model = ModelHandler()
 
 @app.post("/predict")
 def predict_margin(teams: Teams):
+    print(f"Received request: {teams.home_team} vs {teams.away_team}")
     pred = model.make_prediction(teams.home_team, teams.away_team)
 
     if pred > 0:
         winner = teams.home_team
     else:
         winner = teams.away_team
-
-    return {"predicted_margin": pred, "predicted_winner ": winner}
+    print(f"Prediction: {pred}, Winner: {winner}")
+    return {"predicted_margin": pred, "predicted_winner": winner}
