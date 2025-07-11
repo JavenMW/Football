@@ -20,9 +20,9 @@ class DataHandler:
 
     def team_query(self, home_team: str, away_team: str) -> pd.DataFrame:
 
-        home_team_stats = self.data[self.data['home_team'] == home_team].sort_values(by=['season', 'week'], ascending=False).iloc[:3]
+        home_team_stats = self.data[self.data['home_team'] == home_team].sort_values(by=['season', 'week'], ascending=False).iloc[:7]
         home_team_stats = home_team_stats.loc[:, 'season':'hlb3_interception_yards']
-        away_team_stats = self.data[self.data['away_team'] == away_team].sort_values(by=['season', 'week'], ascending=False).iloc[:3]
+        away_team_stats = self.data[self.data['away_team'] == away_team].sort_values(by=['season', 'week'], ascending=False).iloc[:7]
         away_team_stats = away_team_stats.loc[:, 'aqb1':'alb3_interception_yards']
 
         # home_team_stats = self.data[self.data['home_team'] == home_team].sort_values(by=['season', 'week'], ascending=False).iloc[0]
@@ -45,7 +45,6 @@ class DataHandler:
         # Create a single-row DataFrame with correct types
         combined_stats = pd.DataFrame([combined_dict])
 
-        print(combined_stats.head())
         return combined_stats
 
     
