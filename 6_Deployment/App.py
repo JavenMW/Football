@@ -20,19 +20,20 @@ class DataHandler:
 
     def team_query(self, home_team: str, away_team: str) -> pd.DataFrame:
 
-        home_team_stats = self.data[self.data['home_team'] == home_team].sort_values(by=['season', 'week'], ascending=False).iloc[0]
+        home_team_stats = self.data[self.data['home_team'] == home_team].sort_values(by=['season', 'week'], ascending=False).iloc[0:3]
         home_team_stats = home_team_stats.loc['season':'hlb3_interception_yards']
-        away_team_stats = self.data[self.data['away_team'] == away_team].sort_values(by=['season', 'week'], ascending=False).iloc[0]
+        away_team_stats = self.data[self.data['away_team'] == away_team].sort_values(by=['season', 'week'], ascending=False).iloc[0:3]
         away_team_stats = away_team_stats.loc['aqb1':'alb3_interception_yards']
 
         combined_dict = {}
-
+        away_team_stats_mean = away_team_stats.mean(axis=0).to_frame().T
+        home_team_stats_mean = home_team_stats.mean(axis=0).to_frame().T
         # Prefix home stats
-        for col, val in home_team_stats.items():
+        for col, val in home_team_stats_mean.items():
             combined_dict[f"{col}"] = val
 
         # Prefix away stats
-        for col, val in away_team_stats.items():
+        for col, val in away_team_stats_mean.items():
             combined_dict[f"{col}"] = val
 
         # Create a single-row DataFrame with correct types
