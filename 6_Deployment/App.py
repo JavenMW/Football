@@ -19,7 +19,7 @@ class DataHandler:
     def __init__(self):
         rel_path = "3_Data_Preparation/rawdata_clean.pkl"
         dir_path = "C:/Code/Git Repositories/Football/Football/3_Data_Preparation/rawdata_clean.pkl"
-        self.data: pd.DataFrame = joblib.load(dir_path)
+        self.data: pd.DataFrame = joblib.load(rel_path)
 
     def team_query(self, home_team: str, away_team: str) -> pd.DataFrame:
 
@@ -75,7 +75,7 @@ class ModelHandler:
     def __init__(self):
         rel_path = "4_5_Modeling_and_Evaluation/lasso_pipeline.pkl"
         dir_path = "C:/Code/Git Repositories/Football/Football/4_5_Modeling_and_Evaluation/lasso_pipeline.pkl"
-        self.lasso_pipe = joblib.load(dir_path)
+        self.lasso_pipe = joblib.load(rel_path)
         self.data_handler = DataHandler()
 
         # Load a small representative sample for SHAP explainer background
