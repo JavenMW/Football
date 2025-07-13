@@ -17,7 +17,9 @@ app.add_middleware(
 
 class DataHandler:
     def __init__(self):
-        self.data: pd.DataFrame = joblib.load("3_Data_Preparation/rawdata_clean.pkl")
+        rel_path = "3_Data_Preparation/rawdata_clean.pkl"
+        dir_path = "C:/Code/Git Repositories/Football/Football/3_Data_Preparation/rawdata_clean.pkl"
+        self.data: pd.DataFrame = joblib.load(dir_path)
 
     def team_query(self, home_team: str, away_team: str) -> pd.DataFrame:
 
@@ -71,7 +73,9 @@ class ModelHandler:
 
     #     return prediction[0]
     def __init__(self):
-        self.lasso_pipe = joblib.load("4_5_Modeling_and_Evaluation/lasso_pipeline.pkl")
+        rel_path = "4_5_Modeling_and_Evaluation/lasso_pipeline.pkl"
+        dir_path = "C:/Code/Git Repositories/Football/Football/4_5_Modeling_and_Evaluation/lasso_pipeline.pkl"
+        self.lasso_pipe = joblib.load(dir_path)
         self.data_handler = DataHandler()
 
         # Load a small representative sample for SHAP explainer background
@@ -133,8 +137,8 @@ def predict_margin(teams: Teams):
         winner = teams.home_team
     else:
         winner = teams.away_team
-    print(f"Prediction: {pred}, Winner: {winner}")
-    print(f"Top Features: {top_features}")
+    # print(f"Prediction: {pred}, Winner: {winner}")
+    # print(f"Top Features: {top_features}")
     
     return {
         "predicted_margin": round(pred, 2),

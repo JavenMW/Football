@@ -1,7 +1,8 @@
 import requests
 
 def test_prediction(home_team: str, away_team: str):
-    url = "https://whosgonnawin.onrender.com/predict"
+    url = "http://127.0.0.1:8000/predict"
+    # url = "https://whosgonnawin.onrender.com/predict"
     payload = {
         "home_team": home_team,
         "away_team": away_team
