@@ -3,7 +3,7 @@ import pandas as pd
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import shap
+# import shap
 
 app = FastAPI()
 
