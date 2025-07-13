@@ -17,7 +17,7 @@ app.add_middleware(
 
 class DataHandler:
     def __init__(self):
-        self.data: pd.DataFrame = joblib.load("C:/Code/Git Repositories/Football/Football/3_Data_Preparation/rawdata_clean.pkl")
+        self.data: pd.DataFrame = joblib.load("3_Data_Preparation/rawdata_clean.pkl")
 
     def team_query(self, home_team: str, away_team: str) -> pd.DataFrame:
 
@@ -71,7 +71,7 @@ class ModelHandler:
 
     #     return prediction[0]
     def __init__(self):
-        self.lasso_pipe = joblib.load("C:/Code/Git Repositories/Football/Football/4_5_Modeling_and_Evaluation/lasso_pipeline.pkl")
+        self.lasso_pipe = joblib.load("4_5_Modeling_and_Evaluation/lasso_pipeline.pkl")
         self.data_handler = DataHandler()
 
         # Load a small representative sample for SHAP explainer background
