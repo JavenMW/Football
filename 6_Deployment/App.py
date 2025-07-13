@@ -65,6 +65,7 @@ class ModelHandler:
         game_stats = query.team_query(home_team=home_team, away_team=away_team)
         game_stats_processed = query.preprocess_stats(game_stats)
         prediction = self.lasso_pipe.predict(X=game_stats_processed)
+
         return prediction[0]
 
 
