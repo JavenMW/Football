@@ -77,12 +77,12 @@ class ModelHandler:
         # Load a small representative sample for SHAP explainer background
         sample_data = self.data_handler.data.sample(n=100, random_state=42)
         sample_data = sample_data.drop(columns=['margin', 'home_score', 'away_score'])
-        sample_data_processed = self.data_handler.preprocess_stats(sample_data)
+        # sample_data_processed = self.data_handler.preprocess_stats(sample_data)
 
         # Initialize SHAP explainer
-        self.explainer = shap.Explainer(self.lasso_pipe.named_steps['Lasso'], sample_data_processed)
+        # self.explainer = shap.Explainer(self.lasso_pipe.named_steps['Lasso'], sample_data_processed)
 
-        coefficients = self.lasso_pipe.named_steps['Lasso'].coef_
+        # coefficients = self.lasso_pipe.named_steps['Lasso'].coef_
 
 
     def make_prediction_with_explanation(self, home_team: str, away_team: str):
