@@ -27,10 +27,14 @@ This project builds a complete end-to-end ML solution to predict point spread (m
 
 ## 🚀 Installation & Usage
 
-1.) Visit whosgonnawin.vercel.app
-2.) Sign Up (email used for auth purposes only)
-3.) Click verificstion link sent in email
-4.) Select your teams and click make prediction.
+1. Visit whosgonnawin.vercel.app
+
+2. Sign Up (email used for auth purposes only)
+
+3. Click verificstion link sent in email
+
+4. Select your teams and click make prediction.
+
 
 NOTE: If the app goes inactive there will be a cold startup period of around 60 seconds, after that predictions should works instantly. 
 
