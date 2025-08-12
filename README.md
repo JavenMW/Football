@@ -31,7 +31,7 @@ This project builds a complete end-to-end ML solution to predict point spread (m
 
 2. Sign Up (email used for auth purposes only)
 
-3. Click verificstion link sent in email
+3. Click verification link sent in email
 
 4. Select your teams and click make prediction.
 
