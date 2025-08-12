@@ -18,16 +18,16 @@ This project builds a complete end-to-end ML solution to predict point spread (m
    - Replaced nulls with averages for the given position if the data was missing and 0 if there was no data found.
 
 4. **Modeling & Evaluation** (`4_5_Modeling_and_Evaluation`)  
-   Train and tune Lasso regression using sklearn pipelines.  
-   Evaluate with MAE, RMSE, R², and residual analysis using test data.
-   Back tested on previous seasons to simulate live predictions.
+   - Train and tune Lasso regression using sklearn pipelines.  
+   - Evaluate with MAE, RMSE, R², and residual analysis using test data.
+   - Back tested on previous seasons to simulate live predictions.
    
 
 5. **Deployment** (`6_Deployment`)  
-   Package the trained pipeline into a FastAPI application that serves predictions to a Next.js frontend.
+   - Package the trained pipeline into a FastAPI application that serves predictions to a Next.js frontend.
 
 ## Tech Stack
-- **Languages & Libraries**: Python, pandas, NumPy, scikit-learn  
+- **Languages & Libraries**: Python, pandas, NumPy, scikit-learn, xgboost, GridSearchCV  
 - **API**: FastAPI for model serving  
 - **Deployment**: Render (Backend), Vercel (Frontend)  
 - **Dependencies**: See `requirements.txt`
