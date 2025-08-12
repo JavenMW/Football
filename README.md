@@ -9,6 +9,7 @@ This project builds a complete end-to-end ML solution to predict point spread (m
 
 ## Project Flow
 1. **Data Understanding** (`2_Data_Understanding`)
+
    Collected data from three different sources into a materialized view consisting of 6988 rows and 370 features.
    Analyzed 25 years of historical football data to uncover trends seen with a games margin.
    Explore historical game data: correlations, distributions, feature relationships.
